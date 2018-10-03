@@ -13,10 +13,12 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
 x_data = np.random.rand(100).astype(np.float)
+# 返回100个取值范围是[0,1)均匀分布的随机样本值。 astype：转换数组的数据类型。
 y_data = x_data * 0.1 + 0.3
 
 # create TensorFlow structure
 weights = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
+# random_uniform 均匀分布[min,max)
 biases = tf.Variable(tf.zeros([1]))
 
 y = weights * x_data + biases
